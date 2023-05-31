@@ -54,6 +54,16 @@ public final class Console {
         }
     }
 
+    public static void println(Object o) {
+        try {
+            bw.write(o.toString());
+            bw.write('\n');
+            bw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void println() {
         try {
             bw.write('\n');

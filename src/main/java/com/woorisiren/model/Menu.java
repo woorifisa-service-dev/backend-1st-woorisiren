@@ -32,7 +32,7 @@ public class Menu {
         int i = 1;
         for (Item item : menuList) {
             Console.print(String.format("%d. ", i++));
-            Console.println(item.toString());
+            Console.println(item);
         }
     }
 

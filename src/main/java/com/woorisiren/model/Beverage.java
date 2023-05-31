@@ -5,7 +5,7 @@ import com.woorisiren.io.Console;
 public class Beverage extends Item {
 
     private static final String HOT = "HOT";
-    private static final String COLD = "COLD";
+    private static final String ICE = "ICE";
     private static final String SMALL = "SMALL";
     private static final String LARGE = "LARGE";
 
@@ -34,7 +34,7 @@ public class Beverage extends Item {
             Console.println("다시 입력해주세요");
         }
         if (option == 1) {
-            this.temperatureType = COLD;
+            this.temperatureType = ICE;
         } else {
             this.temperatureType = HOT;
         }
@@ -56,7 +56,8 @@ public class Beverage extends Item {
     }
 
     @Override
-    public void printInfo() {
-        Console.println(String.format("%s %s %s - %d원", this.temperatureType, this.name, this.size, this.price));
+    public void printInfo(int count) {
+        Console.println(
+            String.format("%s %s %s %d개 %d원", this.temperatureType, this.name, this.size, count, this.price * count));
     }
 }

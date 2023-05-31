@@ -23,7 +23,7 @@ public class Order {
         return new Order();
     }
 
-    public void printResult() {
+    public void printResult(Store store) {
         Console.println();
 
         if (cart == null) {
@@ -31,9 +31,11 @@ public class Order {
             throw new BalanceException();
         }
 
-        Console.println("주문 성공! 빨리 찾으러 오세요!!!! \n");
+        Console.println("주문 성공! 빨리 찾으러 오세요!!!! \n\n");
+        Console.println(store);
+        Console.println();
         Console.println("=== 주문 내역 ===");
-        cart.printList();
+        cart.printResult();
     }
 
 }

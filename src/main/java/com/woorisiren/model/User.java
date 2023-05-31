@@ -28,7 +28,7 @@ public class User {
 
     public Order pay() {
         int totalPrice = cart.getTotalPrice();
-        if (totalPrice < balance) {
+        if (totalPrice <= balance) {
             balance -= totalPrice;
             return Order.success(this.cart);
         }

@@ -28,6 +28,12 @@ public class Cart {
         }
     }
 
+    public void printResult() {
+        for (String name : cart.keySet()) {
+            cart.get(name).printResult();
+        }
+    }
+
     public int getTotalPrice() {
         int sum = 0;
         for (String name : cart.keySet()) {
@@ -51,6 +57,10 @@ public class Cart {
 
         public void printInfo() {
             Console.println(String.format("%s, %d개", this.item.toString(), count));
+        }
+
+        public void printResult() {
+            item.printInfo(count);
         }
 
         public int getTotalPrice() {

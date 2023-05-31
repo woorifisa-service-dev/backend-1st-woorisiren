@@ -5,6 +5,8 @@ import com.woorisiren.io.Console;
 import com.woorisiren.model.Item;
 import com.woorisiren.model.Menu;
 import com.woorisiren.model.Order;
+import com.woorisiren.model.Store;
+import com.woorisiren.model.StoreList;
 import com.woorisiren.model.User;
 
 public class SirenOrder {
@@ -37,14 +39,17 @@ public class SirenOrder {
 
     private void run() {
         Console.println("===== 사이렌 오더 =====");
-
+        StoreList storeList = new StoreList();
         Menu menu = new Menu();
         User user = new User("고객", 10_000);
 
         // 매장 정보 출력
+        storeList.printStoreList();
 
         // 매장 선택
-
+        Console.print("매장을 선택해주세요: ");
+        int index = Console.readInt();
+        Store store = storeList.getStore(index);
 
         // 상품 선택 (장바구니 추가)
         while (true) {
@@ -74,7 +79,7 @@ public class SirenOrder {
         Order order = user.pay();
 
         // 주문 내역 출력
-        order.printResult();
+        order.printResult(store);
 
     }
 

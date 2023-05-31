@@ -28,12 +28,12 @@ public class Food extends Item {
             Console.println("다시 입력해주세요");
         }
         this.toWarm = option == 1;
-        this.ment = option == 1 ? "데워드리겠습니다" : "데우지 않고 드리겠습니다";
+        this.ment = option == 1 ? "따듯한" : "";
     }
 
     @Override
-    public void printInfo() {
-        Console.println(String.format("주문하신 음식은 %s 이고 가격은 %d원 음식은 %s", this.name, this.price, this.ment));
+    public void printInfo(int count) {
+        Console.println(String.format("%s %s %d개 %d원", this.ment, this.name, count, this.price * count));
     }
 
 }

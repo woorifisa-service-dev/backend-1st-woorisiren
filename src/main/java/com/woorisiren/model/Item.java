@@ -11,7 +11,7 @@ public abstract class Item {
     protected final int price;
 
     public abstract void setOptions();
-    public abstract void printInfo();
+    public abstract void printInfo(int count);
 
     @Override
     public String toString() {
