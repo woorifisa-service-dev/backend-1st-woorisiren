@@ -38,6 +38,7 @@ public final class Console {
     public static void print(String s) {
         try {
             bw.write(s);
+            bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,6 +48,16 @@ public final class Console {
         try {
             bw.write(s);
             bw.write('\n');
+            bw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void println() {
+        try {
+            bw.write('\n');
+            bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
