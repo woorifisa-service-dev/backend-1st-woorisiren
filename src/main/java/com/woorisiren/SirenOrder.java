@@ -27,7 +27,7 @@ public class SirenOrder {
     }
 
     private static int checkRetry() {
-        Console.println("다시 주문하겠습니까? : ");
+        Console.println("다시 주문하겠습니까? (1: 종료, 2: 다시 주문) : ");
         while (true) {
             String s = Console.read();
             if (!(s.equals("1") || s.equals("2"))) {
